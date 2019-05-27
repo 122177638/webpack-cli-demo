@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
         filename: "index.html", // 模板名字
         template: "./public/index.html", // 模板路径(title无效)
         templateParameters: true, // 允许覆盖模板中使用的参数
-        inject: 'head', // script插入位置
+        inject: true, // script插入位置
         favicon: "./public/favicon.ico", // 图标icon
         // chunks: ["index.js"], // script标签引入列表
         // excludeChunks: ["test.js"], // script标签不引入列表
