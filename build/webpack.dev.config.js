@@ -26,6 +26,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "./public/index.html",
+        favicon: "./public/favicon.ico", // 图标icon
         inject: true
       }),
       // 处理webpack提示信息输出
