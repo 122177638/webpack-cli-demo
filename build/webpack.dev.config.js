@@ -5,8 +5,6 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 处理webpack提示信息输出
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-// 控制台错误提示处理
-const notifier = require('node-notifier');
 // 控制台颜色输出
 const colors = require('colors');
 // 配置参数
@@ -37,18 +35,6 @@ module.exports = (env, argv) => {
             `You application is running here ${colors.cyan('http://localhost:'+ (config.devServer.port || 8080))}`
           ],
           notes: [`Or use the network to run ${colors.cyan('http://'+utils.getIPAdress()+':'+(config.devServer.port || 8080))}`]
-        },
-        onErrors: (severity, errors) => {
-          if (severity !== 'error') {
-            return;
-          }
-          const error = errors[0];
-          notifier.notify({
-            title: "Webpack error",
-            message: severity + ': ' + error.name,
-            subtitle: error.file || '',
-            icon: ICON
-          });
         }
       })
     ],
